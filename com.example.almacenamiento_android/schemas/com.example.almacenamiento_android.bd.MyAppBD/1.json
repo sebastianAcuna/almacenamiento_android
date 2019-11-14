@@ -1,0 +1,107 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "12377e43ff6422bcf4b8cbf902de6305",
+    "entities": [
+      {
+        "tableName": "donante",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_donante` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre_donante` TEXT, `apellido_donante` TEXT, `edad_donante` INTEGER NOT NULL, `tipo_sangre_donante` INTEGER NOT NULL, `elemento` INTEGER NOT NULL, `peso_donante` REAL NOT NULL, `estatura_donante` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idDonante",
+            "columnName": "id_donante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombreDonante",
+            "columnName": "nombre_donante",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "apellidoDonante",
+            "columnName": "apellido_donante",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "edadDonante",
+            "columnName": "edad_donante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoSangreDonante",
+            "columnName": "tipo_sangre_donante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elemento",
+            "columnName": "elemento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pesoDonante",
+            "columnName": "peso_donante",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estaturaDonante",
+            "columnName": "estatura_donante",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_donante"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Usuario",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_usuario` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre_usuario` TEXT, `pass_usuario` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idUsuario",
+            "columnName": "id_usuario",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombreUsuario",
+            "columnName": "nombre_usuario",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "passwordUsuario",
+            "columnName": "pass_usuario",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_usuario"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"12377e43ff6422bcf4b8cbf902de6305\")"
+    ]
+  }
+}

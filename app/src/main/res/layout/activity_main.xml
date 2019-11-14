@@ -66,6 +66,7 @@
 
 
     <Button
+        android:id="@+id/btn_ingresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -78,6 +79,7 @@
         android:layout_marginStart="40dp"
         />
     <Button
+        android:id="@+id/btn_nuevo_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

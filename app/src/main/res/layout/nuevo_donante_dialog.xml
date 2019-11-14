@@ -116,7 +116,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/peso_donante_container"
-            android:layout_width="0"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".50"
             >
@@ -129,7 +129,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/estatura_donante_container"
-            android:layout_width="0"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.50"
             >
