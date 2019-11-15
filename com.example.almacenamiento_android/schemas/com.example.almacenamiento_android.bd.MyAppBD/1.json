@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "12377e43ff6422bcf4b8cbf902de6305",
+    "identityHash": "793ed54adbd9afd487f88f8c1a872083",
     "entities": [
       {
         "tableName": "donante",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_donante` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre_donante` TEXT, `apellido_donante` TEXT, `edad_donante` INTEGER NOT NULL, `tipo_sangre_donante` INTEGER NOT NULL, `elemento` INTEGER NOT NULL, `peso_donante` REAL NOT NULL, `estatura_donante` REAL NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_donante` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre_donante` TEXT, `apellido_donante` TEXT, `edad_donante` INTEGER NOT NULL, `tipo_sangre_donante` TEXT, `elemento` TEXT, `peso_donante` REAL NOT NULL, `estatura_donante` REAL NOT NULL)",
         "fields": [
           {
             "fieldPath": "idDonante",
@@ -35,14 +35,14 @@
           {
             "fieldPath": "tipoSangreDonante",
             "columnName": "tipo_sangre_donante",
-            "affinity": "INTEGER",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "elemento",
             "columnName": "elemento",
-            "affinity": "INTEGER",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "pesoDonante",
@@ -101,7 +101,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"12377e43ff6422bcf4b8cbf902de6305\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"793ed54adbd9afd487f88f8c1a872083\")"
     ]
   }
 }

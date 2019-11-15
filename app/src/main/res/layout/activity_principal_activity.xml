@@ -9,7 +9,7 @@
     tools:context=".principal_activity">
 
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/buscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +19,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_donantes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/buscador"

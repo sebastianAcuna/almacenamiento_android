@@ -17,14 +17,28 @@ public class Donante {
     @ColumnInfo(name = "edad_donante")
     private int edadDonante;
     @ColumnInfo(name = "tipo_sangre_donante")
-    private int tipoSangreDonante;
+    private String tipoSangreDonante;
     @ColumnInfo(name = "elemento")
-    private int elemento;
+    private String elemento;
     @ColumnInfo(name = "peso_donante")
     private double pesoDonante;
     @ColumnInfo(name = "estatura_donante")
     private double estaturaDonante;
 
+
+    public Donante(int idDonante, String nombreDonante, String apellidoDonante, int edadDonante, String tipoSangreDonante, String elemento, double pesoDonante, double estaturaDonante) {
+        this.idDonante = idDonante;
+        this.nombreDonante = nombreDonante;
+        this.apellidoDonante = apellidoDonante;
+        this.edadDonante = edadDonante;
+        this.tipoSangreDonante = tipoSangreDonante;
+        this.elemento = elemento;
+        this.pesoDonante = pesoDonante;
+        this.estaturaDonante = estaturaDonante;
+    }
+
+    public Donante() {
+    }
 
     public int getIdDonante() {
         return idDonante;
@@ -58,19 +72,19 @@ public class Donante {
         this.edadDonante = edadDonante;
     }
 
-    public int getTipoSangreDonante() {
+    public String getTipoSangreDonante() {
         return tipoSangreDonante;
     }
 
-    public void setTipoSangreDonante(int tipoSangreDonante) {
+    public void setTipoSangreDonante(String tipoSangreDonante) {
         this.tipoSangreDonante = tipoSangreDonante;
     }
 
-    public int getElemento() {
+    public String getElemento() {
         return elemento;
     }
 
-    public void setElemento(int elemento) {
+    public void setElemento(String elemento) {
         this.elemento = elemento;
     }
 

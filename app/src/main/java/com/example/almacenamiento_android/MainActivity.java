@@ -1,12 +1,11 @@
 package com.example.almacenamiento_android;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -17,28 +16,35 @@ import android.widget.Toast;
 
 import com.example.almacenamiento_android.bd.MyAppBD;
 import com.example.almacenamiento_android.clases.Usuario;
-
-import org.w3c.dom.Text;
+import com.example.almacenamiento_android.clases.utilidad;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button ingresar, agregar;
     private EditText et_user_login, et_pass_login;
     public static MyAppBD myAppDB;
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ingresar = (Button) findViewById(R.id.btn_ingresar);
-        agregar = (Button) findViewById(R.id.btn_nuevo_usuario);
+        myAppDB = Room.databaseBuilder(getApplicationContext(),MyAppBD.class,"donantes.db").allowMainThreadQueries().build();
+
+
+        sharedPreferences = getSharedPreferences(utilidad.SHARED, MODE_PRIVATE);
+
+
+        Button ingresar = (Button) findViewById(R.id.btn_ingresar);
+        Button agregar = (Button) findViewById(R.id.btn_nuevo_usuario);
         et_user_login = (EditText) findViewById(R.id.et_user_login);
         et_pass_login = (EditText) findViewById(R.id.et_pass_login);
 
 
-        myAppDB = Room.databaseBuilder(getApplicationContext(),MyAppBD.class,"donantes.db").allowMainThreadQueries().build();
-
+        if (sharedPreferences.getInt(utilidad.ID_USER, 0) > 0){
+            startActivity(new Intent(MainActivity.this, principal_activity.class));
+        }
 
 
         ingresar.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     Usuario usuario  = myAppDB.myDao().getUsuarioLogin(et_user_login.getText().toString(), et_pass_login.getText().toString());
                     if (usuario != null){
                         Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
+                        sharedPreferences.edit().putInt(utilidad.ID_USER,usuario.getIdUsuario()).apply();
                         startActivity(new Intent(MainActivity.this, principal_activity.class));
                     }else{
                         Toast.makeText(MainActivity.this, "usuario y/o contraseña incorrecta", Toast.LENGTH_SHORT).show();

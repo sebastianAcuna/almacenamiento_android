@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Almacenamiento_android</string>
+
+
+
+    <string-array name="tipo_sangre_array">
+        <item>Tipo de sangre</item>
+        <item>Tipo A</item>
+        <item>Tipo B</item>
+        <item>Tipo 0</item>
+        <item>Tipo AB</item>
+    </string-array>
+
+    <string-array name="elemento_array">
+        <item>Rh</item>
+        <item>Rh+</item>
+        <item>Rh-</item>
+    </string-array>
+
+<!--    <integer-array name="tipo_sangre_int">-->
+<!--        <item>Tipo de sangre</item>-->
+<!--        <item>Tipo A</item>-->
+<!--        <item>Tipo B</item>-->
+<!--        <item>Tipo 0</item>-->
+<!--        <item>Tipo AB</item>-->
+<!--    </integer-array>-->
 </resources>
